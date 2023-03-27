@@ -1,0 +1,7 @@
+# IDE
+.idea/
+
+# Application
+dist/
+node_modules/
+pnpm-lock.yaml

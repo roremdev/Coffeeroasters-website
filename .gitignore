@@ -1,0 +1,10 @@
+# IDE
+.idea/
+.vscode/
+
+# Website
+dist/
+node_modules/
+
+# OS
+.DS_Store
