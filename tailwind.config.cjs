@@ -86,24 +86,17 @@ module.exports = {
             9: '108px',
             10: '120px',
         },
+        extend: {
+            backgroundImage: {
+                'image-hero': `linear-gradient(0deg, rgba(51, 61, 75, 0.45), rgba(51, 61, 75, 0.45)),
+                    url('/images/image-hero.jpg')`,
+            },
+        },
     },
     plugins: [
-        function ({ addBase, theme }) {
-            addBase({
-                body: {
-                    height: '100vh',
-                    color: theme('colors.dark-blue'),
-                },
-                h1: {
-                    fontSize: theme('fontSize.display-medium'),
-                    lineHeight: theme('fontSize.display-medium.1'),
+        require('./src/styles/base/globals.cjs'),
 
-                    [`@media (min-width: ${theme('screens.sm')})`]: {
-                        fontSize: theme('fontSize.headline-large'),
-                        lineHeight: theme('fontSize.headline-large.1'),
-                    },
-                },
-            })
-        },
+        require('./src/styles/components/header.cjs'),
+        require('./src/styles/components/hero.cjs'),
     ],
 }
