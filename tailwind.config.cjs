@@ -98,5 +98,6 @@ module.exports = {
 
         require('./src/styles/components/header.cjs'),
         require('./src/styles/components/hero.cjs'),
+        require('./src/styles/components/products.cjs'),
     ],
 }
