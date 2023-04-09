@@ -4,7 +4,7 @@ module.exports = plugin(function ({ addComponents }) {
     addComponents({
         '.hero': {
             '@apply h-[604px]': {},
-            '@apply mt-4 mx-6 px-[110px]': {},
+            '@apply mt-4 px-[110px]': {},
             '@apply flex flex-col justify-center': {},
             '@apply rounded-lg bg-cover bg-center': {},
             '@apply text-white': {},

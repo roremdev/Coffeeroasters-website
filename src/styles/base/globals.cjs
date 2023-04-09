@@ -7,17 +7,25 @@ module.exports = plugin(function ({ addBase }) {
             '@apply text-dark-blue': {},
         },
         header: {
-            '@apply mt-3 mx-6': {},
+            '@apply mt-3': {},
             '@apply flex justify-between': {},
         },
-        h1: {
-            '@apply font-fraunces text-display-large': {},
+        section: { '@apply my-7': {} },
+
+        h1: { '@apply text-display-large': {} },
+        h2: { '@apply text-headline-large': {} },
+        h3: { '@apply text-title-large': {} },
+        p: { '@apply text-body-large': {} },
+        a: { '@apply text-label-large': {} },
+
+        'header, section': {
+            '@apply mx-[7.2vw]': {},
         },
-        p: {
-            '@apply font-barlow text-body-large': {},
+        'h1, h2, h3': {
+            '@apply font-fraunces': {},
         },
-        a: {
-            '@apply font-barlow text-label-large': {},
+        'p, a': {
+            '@apply font-barlow': {},
         },
     })
 })
