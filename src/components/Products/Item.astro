@@ -1,0 +1,17 @@
+---
+interface Props {
+    title: string
+    image: string
+    content: string
+}
+
+const { title, image, content } = Astro.props
+---
+
+<div class='product-item'>
+    <img src={image} alt={title} />
+    <div class='product-item__body'>
+        <h3>{title}</h3>
+        <p>{content}</p>
+    </div>
+</div>

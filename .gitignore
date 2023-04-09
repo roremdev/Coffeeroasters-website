@@ -3,6 +3,7 @@
 .vscode/
 
 # Website
+.astro/
 dist/
 node_modules/
 
