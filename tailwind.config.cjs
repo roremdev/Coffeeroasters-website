@@ -94,10 +94,11 @@ module.exports = {
         },
     },
     plugins: [
-        require('./src/styles/base/globals.cjs'),
+        require('./src/styles/globals.cjs'),
 
-        require('./src/styles/components/header.cjs'),
-        require('./src/styles/components/hero.cjs'),
-        require('./src/styles/components/products.cjs'),
+        require('./src/styles/components/layouts/header.cjs'),
+        require('./src/styles/components/sections/hero.cjs'),
+        require('./src/styles/components/shared/button.cjs'),
+        require('./src/styles/components/shared/gallery.cjs'),
     ],
 }

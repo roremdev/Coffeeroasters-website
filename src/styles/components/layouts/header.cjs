@@ -1,6 +1,13 @@
 const plugin = require('tailwindcss/plugin')
 
-module.exports = plugin(function ({ addComponents }) {
+module.exports = plugin(function ({ addBase, addComponents }) {
+    addBase({
+        header: {
+            '@apply mt-3 mx-[72px]': {},
+            '@apply flex justify-between': {},
+        },
+    })
+
     addComponents({
         '.menu-navigation': {
             '@apply flex gap-2': {},
