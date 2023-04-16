@@ -5,6 +5,7 @@ export const collections = {
         schema: z.object({
             title: z.string(),
             image: z.string(),
+            price: z.number(),
         }),
     }),
 }
