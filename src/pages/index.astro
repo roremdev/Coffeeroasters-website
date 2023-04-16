@@ -1,30 +1,15 @@
 ---
 import Default from '@layouts/default.astro'
-import Button from '@components/Button.astro'
-import MenuNavigation from '@components/MenuNavigation.astro'
-import ProductsGallery from '@components/Products/Gallery.astro'
+import Hero from '@components/sections/Hero.astro'
+import ProductsGallery from '@components/shared/Gallery.astro'
 ---
 
 <Default>
-    <header>
-        <img src='/images/logo.svg' alt='Coffeeroasters Logo' />
-        <MenuNavigation />
-    </header>
     <main>
-        <section class='hero bg-image-hero'>
-            <h1 class='hero__title'>Great coffee made simple.</h1>
-            <p class='hero__description'>Start your mornings with the world's best coffees. Try our expertly curated
-                artisan coffees from our best roasters delivered directly to your door, at your schedule.</p>
-            <Button text='Create your plan' />
-        </section>
-
-        <section class='products'>
-            <h2>Our premium collection</h2>
+        <Hero />
+        <section class='flex-column-[4] px-[110px]'>
+            <h2 class='text-center'>Our premium collection</h2>
             <ProductsGallery />
         </section>
-
-
     </main>
-
-
 </Default>
