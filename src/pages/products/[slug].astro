@@ -1,0 +1,59 @@
+---
+import { getCollection, getEntryBySlug } from 'astro:content'
+import Default from '@layouts/default.astro'
+import Button from '@components/shared/Button.astro'
+
+export function getStaticPaths() {
+    return [
+        { params: { slug: 'danche' } },
+        { params: { slug: 'gran-espresso' } },
+        { params: { slug: 'piccollo' } },
+        { params: { slug: 'planalto' } }
+    ]
+}
+
+const { slug } = Astro.params
+const product = await getEntryBySlug('products', slug)
+const products = await getCollection('products',
+    ({ data }) => {
+        return data.title !== product.data.title
+    })
+---
+
+<Default>
+    <main>
+        <section class='grid-columns-[12]'>
+            <div class='col-start-2 col-span-2 flex-column-[4]'>
+                {products.map(product => (
+                    <a class='gallery-item' href=`/products/${product.slug}`>
+                        <img src={product.data.image} alt={product.data.title} />
+                    </a>
+                ))}
+            </div>
+
+            <div class='col-span-8 grid-columns-[8]'>
+                <img class='col-span-4'
+                     src={product.data.image} alt={product.data.title} />
+
+                <div class='col-span-4 flex-column-[3]'>
+                    <div class='flex-column-[1]'>
+                        <h2>{product.data.title}</h2>
+                        <p>{product.body}</p>
+                    </div>
+
+                    <div class='flex-column-[1]'>
+                        <h3>Quantity</h3>
+                        <div class='grid-columns-[2]'>
+                            <p>$29.00</p>
+                            <p>${product.data.price.toFixed(2)}</p>
+                        </div>
+                    </div>
+                    <div class='grid-columns-[2]'>
+                        <Button text='Buy it now' />
+                        <Button variant='outline' text='Add to cart' />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</Default>
