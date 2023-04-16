@@ -8,7 +8,7 @@
 
 ### ✍️ Author
 
-> **Emmanuel Rodriguez** - ⚡️ Master Software Engineer
+> **Emmanuel Rodriguez** - ⚡️ Master Software Engineer | ⬢ Sr. Full Stack Engineer
 
 <div>
   <a href="https://twitter.com/roremDev">
