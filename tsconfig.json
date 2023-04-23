@@ -4,8 +4,11 @@
         "baseUrl": ".",
         "paths": {
             "@components/*": ["src/components/*"],
+            "@entities/*": ["src/entities/*"],
             "@layouts/*": ["src/layouts/*"],
             "@pages/*": ["src/pages/*"]
-        }
+        },
+        "jsx": "preserve",
+        "jsxImportSource": "solid-js"
     }
 }

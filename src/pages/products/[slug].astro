@@ -1,7 +1,7 @@
 ---
 import { getCollection, getEntryBySlug } from 'astro:content'
 import Default from '@layouts/default.astro'
-import Button from '@components/shared/Button.astro'
+import Product from '@components/sections/Product.vue'
 
 export function getStaticPaths() {
     return [
@@ -30,30 +30,12 @@ const products = await getCollection('products',
                     </a>
                 ))}
             </div>
-
-            <div class='col-span-8 grid-columns-[8]'>
-                <img class='col-span-4'
-                     src={product.data.image} alt={product.data.title} />
-
-                <div class='col-span-4 flex-column-[3]'>
-                    <div class='flex-column-[1]'>
-                        <h2>{product.data.title}</h2>
-                        <p>{product.body}</p>
-                    </div>
-
-                    <div class='flex-column-[1]'>
-                        <h3>Quantity</h3>
-                        <div class='grid-columns-[2]'>
-                            <p>$29.00</p>
-                            <p>${product.data.price.toFixed(2)}</p>
-                        </div>
-                    </div>
-                    <div class='grid-columns-[2]'>
-                        <Button text='Buy it now' />
-                        <Button variant='outline' text='Add to cart' />
-                    </div>
-                </div>
-            </div>
+            <Product client:visible
+                     title={product.data.title}
+                     description={product.body}
+                     image={product.data.image}
+                     price={product.data.price}
+            />
         </section>
     </main>
 </Default>

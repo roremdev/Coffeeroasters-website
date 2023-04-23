@@ -1,14 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{astro,js,ts,jsx,tsx}'],
+    content: ['./src/**/*.{vue,astro,js,ts,jsx,tsx}'],
     theme: {
         colors: {
             'dark-blue': '#333D4B',
             peach: '#FDD6B9',
             cream: '#FEFCF7',
             white: '#FFFFFF',
-            'light-gray': '#F4F1EB',
-            gray: '#83888F',
+            gray: {
+                DEFAULT: '#83888F',
+                light: '#F4F1EB',
+            },
             jade: {
                 500: '#0E8684',
                 600: '#0A6B73',
