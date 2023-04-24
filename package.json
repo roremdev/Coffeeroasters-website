@@ -2,6 +2,7 @@
     "type": "module",
     "version": "0.0.0",
     "scripts": {
+        "prepack": "husky install",
         "format": "prettier --write .",
         "dev": "astro dev",
         "start": "astro dev",
@@ -10,6 +11,8 @@
         "astro": "astro"
     },
     "dependencies": {
+        "@astrojs/rss": "2.3.2",
+        "@astrojs/sitemap": "1.2.2",
         "@astrojs/tailwind": "3.1.1",
         "@astrojs/vue": "2.1.1",
         "astro": "2.3.0",
@@ -17,7 +20,8 @@
         "vue": "^3.2.47"
     },
     "devDependencies": {
-        "devmoji": "2.3.0",
+        "@commitlint/cli": "17.6.1",
+        "@commitlint/config-conventional": "17.6.1",
         "husky": "8.0.3",
         "prettier": "2.8.8"
     },
@@ -25,5 +29,57 @@
         "tabWidth": 4,
         "semi": false,
         "singleQuote": true
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ],
+        "parserPreset": "conventional-changelog-conventionalcommits",
+        "rules": {
+            "type-case": [
+                2,
+                "always",
+                "lower-case"
+            ],
+            "type-empty": [
+                2,
+                "never"
+            ],
+            "type-enum": [
+                2,
+                "always",
+                [
+                    "feat",
+                    "fix",
+                    "docs",
+                    "style",
+                    "refactor",
+                    "test",
+                    "init",
+                    "ci",
+                    "work",
+                    "chore",
+                    "delete",
+                    "format"
+                ]
+            ],
+            "scope-empty": [
+                0
+            ],
+            "subject-case": [
+                2,
+                "always",
+                "lower-case"
+            ],
+            "subject-empty": [
+                2,
+                "never"
+            ],
+            "subject-full-stop": [
+                2,
+                "never",
+                "."
+            ]
+        }
     }
 }
