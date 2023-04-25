@@ -16,7 +16,7 @@ jobs:
       - name: ⚙️Configure GitHub Actions
         uses: actions/checkout@v3
       - name: 🚧Install, build, and upload your site
-        uses: withastro/action@v0
+        uses: withastro/action@v0.2.0
 
   deploy:
     needs: build
