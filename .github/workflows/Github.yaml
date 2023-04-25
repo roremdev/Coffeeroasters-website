@@ -15,8 +15,26 @@ jobs:
     steps:
       - name: ⚙️Configure GitHub Actions
         uses: actions/checkout@v3
-      - name: 🚧Install, build, and upload your site
-        uses: withastro/action@v0.2.0
+
+      - name: 🛠 Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: 🛠 Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: 🚧 Install dependencies and Build project
+        run: pnpm install --no-frozen-lockfile && pnpm build
+
+      - name: 🏷 Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: |
+            dist/
 
   deploy:
     needs: build
@@ -27,4 +45,4 @@ jobs:
     steps:
       - name: 🚀 Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v2.0.1
