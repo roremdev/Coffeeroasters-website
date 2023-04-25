@@ -4,7 +4,7 @@ import vue from '@astrojs/vue'
 import sitemap from '@astrojs/sitemap'
 
 export default defineConfig({
-    site: 'https://roremdev.github.io',
-    base: '/Coffeeroasters-website',
+    site: 'https://coffeeroasters.rorem.dev',
+    base: '/',
     integrations: [tailwind(), vue(), sitemap()]
 })
