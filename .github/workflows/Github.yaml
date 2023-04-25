@@ -16,25 +16,8 @@ jobs:
       - name: ⚙️Configure GitHub Actions
         uses: actions/checkout@v3
 
-      - name: 🛠 Setup NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: 🛠 Setup PNPM
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
-
       - name: 🚧 Install dependencies and Build project
-        run: pnpm install --no-frozen-lockfile && pnpm build
-
-      - name: 🏷 Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: build
-          path: |
-            dist/
+        uses: withastro/action@v0.2.0
 
   deploy:
     needs: build
@@ -43,11 +26,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: 🏷 Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: build
-
       - name: 🚀 Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2.0.1
