@@ -5,5 +5,6 @@ import sitemap from '@astrojs/sitemap'
 
 export default defineConfig({
     site: 'https://coffeeroasters.rorem.dev',
+    base: '/Coffeeroasters-website',
     integrations: [tailwind(), vue(), sitemap()]
 })
